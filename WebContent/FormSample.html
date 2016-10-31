@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<script src="jquery/jquery-ui.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+<script src="bootstrap/bootstrap.js"></script>
+<script src="bootstrap/bootstrap.min.js"></script>	
+</head>
+
+<body ng-app="myapp">
+
+	<div ng-controller="MyController">
+		<form>
+			First name<input type="text" name="firstName" ng-model="myForm.firstName">
+			 <br /> 
+			  Last name<input type="text" name="lastName"
+				ng-model="myForm.lastName"> <br />
+				<button ng-click="myForm.submitTheForm()">Submit Form</button>
+		</form>
+		<div>
+			<br> save details
+			{{myForm.saveDetails}} <input type="checkbox"
+				ng-model="myForm.saveDetails" ng-true-value="yes"
+				ng-false-value="no"><br> Gender {{myForm.gender}}<br>
+			Male <input type="radio" ng-model="myForm.gender" value="male">
+			Female<input type="radio" ng-model="myForm.gender" value="female">
+		</div>
+	</div>
+
+	<script>
+    angular.module("myapp", [])
+            .controller("MyController", function($scope) {
+                $scope.myForm = {};
+                $scope.myForm.firstName = "Aswini";
+                $scope.myForm.lastName  = "Pannala";
+                $scope.myForm.saveDetails;
+                $scope.myForm.gender;
+                
+            } );
+</script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html ng-app="countryApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+        <script>
+      var countryApp = angular.module('countryApp', ['ngResource','ngRoute']);
+
+      countryApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+            templateUrl: 'country-list.html',
+            controller: 'CountryListCtrl'
+          }).
+          when('/:countryName', {
+            templateUrl: 'country-detail.html',
+            controller: 'CountryDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+      countryApp.controller('CountryListCtrl', function ($scope, $http){
+        $http.get('data/countries.json').success(function(data) {
+          $scope.countries = data;
+        });
+      });
+
+      countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams){
+        $scope.name = $routeParams.countryName;
+      });
+    </script>
+  </head>
+  <body ng-app="countryApp">
+  <h1>Helloo</h1>
+    <ng-view></ng-view>
+    
+    <script
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<script type="text/javascript" src="js/angular-resource.js"></script>
+	<script type="text/javascript" src="js/angular-resource.min.js"></script>
+  </body>
+</html>
