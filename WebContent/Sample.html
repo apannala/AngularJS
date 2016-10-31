@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Angular JS Sample Example</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+First Name::<input type="text" ng-model="fname"><br>
+Last Name::<input type="text" ng-model="lname"><br><br>
+Full Name::{{fullname()}}
+
+</div>
+
+<script>
+var app=angular.module('myApp',[]);
+app.controller('myController',function($scope){
+  $scope.fname="Aswini";
+  $scope.lname="Pannala";	
+  $scope.fullname= function(){
+    return $scope.fname+" "+$scope.lname;
+	  }
+});
+</script>
+
+
+</body>
+</html>

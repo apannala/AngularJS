@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="calcController">
+		Enter Number::<input type="number" ng-model="number" />
+		<button ng-click="square()">
+			X<sup>2</sup>
+		</button>
+		<button ng-click="cube()">
+			X<sup>2</sup>
+		</button>
+		<p>Result:{{result}}</p>
+	</div>
+	<script type="text/javascript" src="js/calcController.js"></script>
+	<script type="text/javascript" src="services/mathService.js"></script>
+</body>
+</html>

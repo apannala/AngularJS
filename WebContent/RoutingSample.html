@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Routing Sample</title>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body ng-app="myApp">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<ul class="nav">
+					<li><a href="#addOrders">Add Orders</a></li>
+					<li><a href="#showOrders">Show Orders</a></li>
+				</ul>
+			</div>
+			<div class="col-md-9">
+<!-- 								<ng-view></ng-view> -->
+ 				<div ng-view></div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="js/routingScript.js"></script>
+	<script type="text/javascript" src="js/angular-route.js"></script>
+	<!--  <script type="text/javascript" src="js/angular-route.min.js.map"></script>  -->
+	<script type="text/javascript" src="js/angular-resource.js"></script>
+	<script type="text/javascript" src="js/angular-resource.min.js"></script>
+	<!-- <script type="text/javascript" src="js/angular.min.js.map"></script> -->
+
+</body>
+</html>
